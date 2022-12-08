@@ -4,8 +4,7 @@
  */
 package Controlador;
 
-import Modelo.Usuario;
-import Operaciones.AccionesUsuario;
+import Operaciones.AccionesMedico;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -17,47 +16,37 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author duber
  */
-public class actualizarUsuario1 extends HttpServlet {
+public class borrarMedico extends HttpServlet {
 
-    
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
+        try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+           
+            //borrar registro de la base de datos
             
-            String nom,ape,doc,email,cont,confcont;
             
-                   int id = Integer.parseInt(request.getParameter("id2"));
+            int id = Integer.parseInt(request.getParameter("id"));
+             int estatus = AccionesMedico.borrarMedico(id);
             
-                   nom=request.getParameter("nombres2");
-                   ape=request.getParameter("apellidos2");
-                   doc=request.getParameter("d_identidad2");
-                   email=request.getParameter("email2");
-                   cont=request.getParameter("contrasena2");
-                   confcont=request.getParameter("confirmar_contrasena2");
-            
-                 //instancia Usuario
-                 
-                   Usuario usr = new Usuario();
-                   
-                   usr.setId(id);
-                   usr.setNombres(nom);
-                   usr.setApellidos(ape);
-                   usr.setD_identidad(doc);
-                   usr.setEmail(email);
-                   usr.setContrasena(cont);
-                   usr.setConfirmar_contrasena(confcont);
-            
-                   int estatus = AccionesUsuario.actualizarUsuario(usr);
-                  
-                   if(estatus > 0){
-                      response.sendRedirect("consultarUsuarios.jsp");
+            if(estatus > 0){
+                      response.sendRedirect("consultarMedicos.jsp");
                    
                    }else{
                    response.sendRedirect("error.jsp");
                    
                    }
+            
         }
     }
 

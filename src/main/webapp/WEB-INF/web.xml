@@ -16,6 +16,18 @@
         <servlet-name>actualizarUsuario1</servlet-name>
         <servlet-class>Controlador.actualizarUsuario1</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>actualizarMedico</servlet-name>
+        <servlet-class>Controlador.actualizarMedico</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>borrarMedico</servlet-name>
+        <servlet-class>Controlador.borrarMedico</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>guardarMedico</servlet-name>
+        <servlet-class>Controlador.guardarMedico</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorUsuario</servlet-name>
         <url-pattern>/ControladorUsuario</url-pattern>
@@ -31,6 +43,18 @@
     <servlet-mapping>
         <servlet-name>actualizarUsuario1</servlet-name>
         <url-pattern>/actualizarUsuario1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actualizarMedico</servlet-name>
+        <url-pattern>/actualizarMedico</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>borrarMedico</servlet-name>
+        <url-pattern>/borrarMedico</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>guardarMedico</servlet-name>
+        <url-pattern>/guardarMedico</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -25,7 +25,7 @@
                     &#8801
                 </label>
                 <nav class="menu">
-                    <a href="isesion_usuarios.jsp" >Atras</a>
+                    <a href="./validacion_registros.html" >Atras</a>
                     <label for="check" class="esconder-menu">
                         &#215
                     </label>      
