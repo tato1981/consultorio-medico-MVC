@@ -43,21 +43,24 @@
     <body>
       <div class="container">
        <h1 class="form-title">Inicio sesion medicos</h1>
-       <form class="#" id="form" action="#">
+       <form class="#" id="form" action="validarMedico">
          <div class="main-user-info">
-           <div class="user-input-box">
-             <label class="documentmedico">Documento</label>
-             <input type="text"
-                    id="document-medico"
-                    name="document-medico"
-                    placeholder="Documento">
+             
+           <div class="user-input-box ">
+             <label class="email">Email</label>
+             <input type="email"
+                    id="email"
+                    name="email"
+                    placeholder="E-mail">
+                    
+                    
           </div>
 
           <div class="user-input-box">
            <label class="password">Contraseña</label>
            <input type="password"
                   id="password"
-                  name="password"
+                  name="contrasena"
                   placeholder="Contraseña">
         </div>
 
@@ -94,7 +97,7 @@
    </div> -->         
    
               <div class="form-submit-btn">
-                 <input type="button" onclick= "login();" value="Iniciar">
+                 <input id="btn-iniciar" onclick="login();"  type="submit" name="accion"   value="Iniciar" >
               </div>
        </div>
      </form>

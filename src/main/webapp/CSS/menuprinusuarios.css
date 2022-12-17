@@ -1,14 +1,10 @@
 
-/* 
-    Created on : 14/11/2022, 11:07:02 p. m.
-    Author     : duber
-*/
-
 *,*::before, *::after{
-    margin: 0;
+    margin: 0px;
     padding: 0;
     outline: 0;
     box-sizing: border-box;
+   
 }
 
 
@@ -163,9 +159,16 @@ div footer{
     background: rgb(250, 248, 248, 0.8);
     text-align: center;
     padding: 15px;
-   margin-top: auto;
+    margin-top: auto;
     position: fixed;
     bottom: 0;
    
+}
+
+.login{
+    
+    text-align: right;
+    color: rgb(221, 12, 165);
+    padding: 10px;
 }
 

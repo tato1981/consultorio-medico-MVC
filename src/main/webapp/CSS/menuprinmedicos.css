@@ -146,6 +146,7 @@ h2{
         justify-content: center;
         cursor: pointer;
         display: block;
+        text-align: center;
         
         
 }
@@ -161,6 +162,13 @@ div footer{
     position: fixed;
     bottom: 0;
    
+}
+
+.login{
+    
+    text-align: right;
+    color: rgb(221, 12, 165);
+    padding: 10px;
 }
 
 

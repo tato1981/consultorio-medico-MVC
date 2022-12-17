@@ -43,14 +43,14 @@
     <body>
       <div class="container">
        <h1 class="form-title">Inicio sesion usuarios</h1>
-       <form class="user-form" id="form" action="#" >
+       <form class="user-form"  action="validarUsuario" >
          <div class="main-user-info">
            <div class="user-input-box ">
-             <label class="document">Documento</label>
-             <input type="text"
+             <label class="document">Email</label>
+             <input type="email"
                     id="document"
-                    name="document"
-                    placeholder="Documento">
+                    name="email"
+                    placeholder="E-mail">
                     
                     
           </div>
@@ -59,7 +59,7 @@
            <label class="password">Contraseña</label>
            <input type="password"
                   id="password"
-                  name="password"
+                  name="contrasena"
                   placeholder="Contraseña">                
         </div>
 
@@ -96,7 +96,7 @@
    </div> -->         
    
           <div class="form-submit-btn">
-            <input id="btn-iniciar" onclick="login();"  type="button"  value="Iniciar" >
+            <input id="btn-iniciar" onclick="login();"  type="submit" name="accion"   value="Iniciar" >
           </div> 
 
        </div>

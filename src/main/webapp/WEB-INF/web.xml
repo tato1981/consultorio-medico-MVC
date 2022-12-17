@@ -28,6 +28,18 @@
         <servlet-name>guardarMedico</servlet-name>
         <servlet-class>Controlador.guardarMedico</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>validarUsuario</servlet-name>
+        <servlet-class>Controlador.validarUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>validarMedico</servlet-name>
+        <servlet-class>Controlador.validarMedico</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CerrarSesionMedico</servlet-name>
+        <servlet-class>Controlador.CerrarSesionMedico</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorUsuario</servlet-name>
         <url-pattern>/ControladorUsuario</url-pattern>
@@ -55,6 +67,18 @@
     <servlet-mapping>
         <servlet-name>guardarMedico</servlet-name>
         <url-pattern>/guardarMedico</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>validarUsuario</servlet-name>
+        <url-pattern>/validarUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>validarMedico</servlet-name>
+        <url-pattern>/validarMedico</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CerrarSesionMedico</servlet-name>
+        <url-pattern>/CerrarSesionMedico</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
