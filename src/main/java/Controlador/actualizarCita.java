@@ -4,8 +4,8 @@
  */
 package Controlador;
 
-import Modelo.Paciente;
-import Operaciones.AccionesPaciente;
+import Modelo.Cita;
+import Operaciones.AccionesCitaMedica;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -17,51 +17,64 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author duber
  */
-public class actualizarPaciente extends HttpServlet {
+public class actualizarCita extends HttpServlet {
 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        
-         //variables globales de la clase usuario
-            String nom,ape,doc,fec,email,tel,serv;
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
             
-            int id = Integer.parseInt(request.getParameter("id2"));
             
+            String fec,hor, nom, ape, tdoc, doc, email, tel, serm, espe;
+            
+                int id = Integer.parseInt(request.getParameter("id2"));
+                               
+                              
+                   
+                   fec= request.getParameter("fecha_cita2");                  
+                   hor=request.getParameter("hora_cita2");
                    nom=request.getParameter("nombres2");
                    ape=request.getParameter("apellidos2");
+                   tdoc=request.getParameter("documento2");
                    doc=request.getParameter("d_identidad2");
-                   fec=request.getParameter("fecha_nacimiento2");
-                   email=request.getParameter("email2");
                    tel=request.getParameter("telefono2");
-                   serv=request.getParameter("servicio_medico2");
+                   email=request.getParameter("email2");
+                   serm= request.getParameter("servicio_medico2");
+                   espe=request.getParameter("especialidad2");
+                   
                             
                    //instanciar el Usuario
                    
-                   Paciente pac = new Paciente();
+                   Cita cit = new Cita();
                    
                    //enviar los paramentros
                    
-                   pac.setId(id);
-                   pac.setNombres(nom);
-                   pac.setApellidos(ape);
-                   pac.setD_identidad(doc);                   
-                   pac.setFecha_nacimiento(fec);
-                   pac.setEmail(email);
-                   pac.setTelefono(tel);
-                   pac.setServicio_medico(serv);
+                   cit.setId(id);
+                   cit.setFecha(fec);
+                   cit.setHora(hor);
+                   cit.setNombres(nom);
+                   cit.setApellidos(ape);
+                   cit.setDocumento(tdoc);
+                   cit.setD_identidad(doc);
+                   cit.setTelefono(tel);
+                   cit.setEmail(email);
+                   cit.setServicio_medico(serm);
+                   cit.setEspecialidad(espe);
                    
-                   int estatus = AccionesPaciente.actualizarPaciente(pac);
+                   
+                   int estatus =   AccionesCitaMedica.actualizarCita(cit);
+                   
                    
                    if(estatus > 0){
-                       response.sendRedirect("consultarPaciente.jsp");
+                       response.sendRedirect("consultarCita.jsp");
                    
                    }else{
-                   response.sendRedirect("menuprinadmin.jsp");
+                   response.sendRedirect("menuprinusuarios.jsp");
                    
                    }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

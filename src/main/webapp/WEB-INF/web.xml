@@ -52,6 +52,18 @@
         <servlet-name>borrarPaciente</servlet-name>
         <servlet-class>Controlador.borrarPaciente</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>guardarCita</servlet-name>
+        <servlet-class>Controlador.guardarCita</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actualizarCita</servlet-name>
+        <servlet-class>Controlador.actualizarCita</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>borrarCita</servlet-name>
+        <servlet-class>Controlador.borrarCita</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorUsuario</servlet-name>
         <url-pattern>/ControladorUsuario</url-pattern>
@@ -103,6 +115,18 @@
     <servlet-mapping>
         <servlet-name>borrarPaciente</servlet-name>
         <url-pattern>/borrarPaciente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>guardarCita</servlet-name>
+        <url-pattern>/guardarCita</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actualizarCita</servlet-name>
+        <url-pattern>/actualizarCita</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>borrarCita</servlet-name>
+        <url-pattern>/borrarCita</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

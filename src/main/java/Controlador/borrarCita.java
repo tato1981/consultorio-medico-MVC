@@ -4,8 +4,7 @@
  */
 package Controlador;
 
-import Modelo.Paciente;
-import Operaciones.AccionesPaciente;
+import Operaciones.AccionesCitaMedica;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -17,51 +16,27 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author duber
  */
-public class actualizarPaciente extends HttpServlet {
+public class borrarCita extends HttpServlet {
 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        
-         //variables globales de la clase usuario
-            String nom,ape,doc,fec,email,tel,serv;
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
             
-            int id = Integer.parseInt(request.getParameter("id2"));
             
-                   nom=request.getParameter("nombres2");
-                   ape=request.getParameter("apellidos2");
-                   doc=request.getParameter("d_identidad2");
-                   fec=request.getParameter("fecha_nacimiento2");
-                   email=request.getParameter("email2");
-                   tel=request.getParameter("telefono2");
-                   serv=request.getParameter("servicio_medico2");
-                            
-                   //instanciar el Usuario
-                   
-                   Paciente pac = new Paciente();
-                   
-                   //enviar los paramentros
-                   
-                   pac.setId(id);
-                   pac.setNombres(nom);
-                   pac.setApellidos(ape);
-                   pac.setD_identidad(doc);                   
-                   pac.setFecha_nacimiento(fec);
-                   pac.setEmail(email);
-                   pac.setTelefono(tel);
-                   pac.setServicio_medico(serv);
-                   
-                   int estatus = AccionesPaciente.actualizarPaciente(pac);
-                   
-                   if(estatus > 0){
-                       response.sendRedirect("consultarPaciente.jsp");
+            int id = Integer.parseInt(request.getParameter("id"));
+             int estatus = AccionesCitaMedica.borrarCita(id);
+            
+            if(estatus > 0){
+                      response.sendRedirect("consultarCita.jsp");
                    
                    }else{
-                   response.sendRedirect("menuprinadmin.jsp");
+                   response.sendRedirect("error.jsp");
                    
                    }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

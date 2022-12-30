@@ -4,10 +4,12 @@
  */
 package Controlador;
 
-import Modelo.Paciente;
-import Operaciones.AccionesPaciente;
+import Modelo.Cita;
+import Operaciones.AccionesCitaMedica;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
+import java.sql.Time;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,51 +19,63 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author duber
  */
-public class actualizarPaciente extends HttpServlet {
+public class guardarCita extends HttpServlet {
 
     
+           
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        
-         //variables globales de la clase usuario
-            String nom,ape,doc,fec,email,tel,serv;
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
             
-            int id = Integer.parseInt(request.getParameter("id2"));
             
-                   nom=request.getParameter("nombres2");
-                   ape=request.getParameter("apellidos2");
-                   doc=request.getParameter("d_identidad2");
-                   fec=request.getParameter("fecha_nacimiento2");
-                   email=request.getParameter("email2");
-                   tel=request.getParameter("telefono2");
-                   serv=request.getParameter("servicio_medico2");
+            //variables globales de la clase cita
+            
+            String fec,hor, nom, ape, tdoc, doc, email, tel, serm, espe;
+            
+                   
+                   fec= request.getParameter("fecha_cita");                  
+                   hor=request.getParameter("hora_cita");
+                   nom=request.getParameter("nombres");
+                   ape=request.getParameter("apellidos");
+                   tdoc=request.getParameter("documento");
+                   doc=request.getParameter("d_identidad");
+                   tel=request.getParameter("telefono");
+                   email=request.getParameter("email");
+                   serm= request.getParameter("servicio_medico");
+                   espe=request.getParameter("especialidad");
+                   
                             
                    //instanciar el Usuario
                    
-                   Paciente pac = new Paciente();
+                   Cita cit = new Cita();
                    
                    //enviar los paramentros
                    
-                   pac.setId(id);
-                   pac.setNombres(nom);
-                   pac.setApellidos(ape);
-                   pac.setD_identidad(doc);                   
-                   pac.setFecha_nacimiento(fec);
-                   pac.setEmail(email);
-                   pac.setTelefono(tel);
-                   pac.setServicio_medico(serv);
+                   cit.setFecha(fec);
+                   cit.setHora(hor);
+                   cit.setNombres(nom);
+                   cit.setApellidos(ape);
+                   cit.setDocumento(tdoc);
+                   cit.setD_identidad(doc);
+                   cit.setTelefono(tel);
+                   cit.setEmail(email);
+                   cit.setServicio_medico(serm);
+                   cit.setEspecialidad(espe);
                    
-                   int estatus = AccionesPaciente.actualizarPaciente(pac);
                    
+                   int estatus = 
+                   AccionesCitaMedica.registarCita(cit);
                    if(estatus > 0){
-                       response.sendRedirect("consultarPaciente.jsp");
+                       response.sendRedirect("menuprinusuarios.jsp");
                    
                    }else{
-                   response.sendRedirect("menuprinadmin.jsp");
+                   response.sendRedirect("error.jsp");
                    
                    }
+            
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

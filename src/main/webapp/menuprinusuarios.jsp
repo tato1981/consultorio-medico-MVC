@@ -24,10 +24,10 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <h2>MENU</h2>
                 <a href="validacion_pacientes_nuevos.jsp">REGISTRO PACIENTES</a>
-                <a href="#">AGENDAR CITA</a>
+                <a href="citas_pacientes.jsp">AGENDAR CITA</a>
                 <a href="#">ESTADO CITA</a>
                 <a href="#">MEDIO DE PAGO</a>
-                <a href="#">CITAS PROGRAMADAS</a>
+                <a href="consultarCita.jsp">CITAS PROGRAMADAS</a>
                 <a href="#">MODULO PACIENTES</a>
                 <a href="#">AYUDA</a><br>
 
