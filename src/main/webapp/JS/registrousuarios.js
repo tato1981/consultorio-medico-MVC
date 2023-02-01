@@ -1,47 +1,58 @@
-/*const datos = {
+/* global leerTexto */
+
+const datos = {
   nombres: '',
   apellidos: '',
   documento: '',
   email: '',
-  nuevpassword: '',
-  confirmpassword: '',
-}
+  contrasena: '',
+  confirmar_contrasena: ''
+};
+
 
 const nombres = document.querySelector('#nombres');
 const apellidos = document.querySelector('#apellidos');
 const documento = document.querySelector('#documento');
 const email = document.querySelector('#email');
-const nuevaContraseña = document.querySelector('#nuevpassword');
-const repetirContraseña = document.querySelector('#confirmpassword');
-const formulario = document.querySelector('.formulario');
+const contrasena = document.querySelector('#contrasena');
+const confirmar_contrasena = document.querySelector('#confirmar_contrasena');
+
+const formulario = document.querySelector('#formulario');
+
 
 nombres.addEventListener('input', leerTexto);
 apellidos.addEventListener('input', leerTexto);
 documento.addEventListener('input', leerTexto);
 email.addEventListener('input', leerTexto);
-nuevaContraseña.addEventListener('input', leerTexto);
-repetirContraseña.addEventListener('input', leerTexto);
+contrasena.addEventListener('input', leerTexto);
+confirmar_contrasena.addEventListener('input', leerTexto);
 
 // evento submit
 
-formulario.addEventListener('submit', function(evento){
-  console.log(evento);
-  evento.preventDefault();
+formulario.addEventListener('submit', function(e){
+  e.preventDefault();
+  
 
-  const{nombres, apellidos, documento, email, nuevpassword, confirmpassword} = datos;
+  const{nombres, apellidos, documento, email, contrasena, confirmar_contrasena} = datos;
 
-if(nombres === '' || apellidos ==='' || documento === '' || email ==='' || nuevpassword === ''|| confirmpassword ===''){
+if(nombres === '' || apellidos ==='' || documento === '' || email ==='' || contrasena === ''|| confirmar_contrasena ===''){
       mostrarError('Todos los campos son abligatorios'); 
-    return;
+   // return;
+   
 
-   }       
+   }if(contrasena !== confirmar_contrasena ){
+        //mostrarMensaje('Las contraseñas son diferentes');
+        mostrarError('Las contraseñas son diferentes');
+   } else{
+       mostrarMensaje('Registro enviado correctamente');
+   }     
     
-    mostrarMensaje('Registro enviado correctamente');
+    //mostrarMensaje('Registro enviado correctamente');
 });
 
 function leerTexto(e){
   datos[e.target.id] = e.target.value;
-  console.log(datos);
+  //console.log(datos);
 }
 
 function mostrarError(mensaje){
@@ -68,45 +79,45 @@ function mostrarMensaje(mensaje){
   }, 5000);
 }
 
-function login(){
-  var documento, contraseña;
-
-  documento = document.getElementById('document').value;
-  contraseña = document.getElementById('password').value;
-
-  if( documento === '' && contraseña === '' ){
-      alert('Error ingresa los datos solicitados')
-  };
-  if( documento.length === 0){
-      alert('Por favor escriba un numero de documento')
-  };
-  if( contraseña.length < 6){
-      alert('Error escriba una contraseña mayor a 6 caracteres')
-
-  };
-  if( documento === '9958113' && contraseña === '123456' ){
-    window.location= 'menuprinusuarios.html';
-
-}
-
-}*/
-
-
-
-/*function mostrarExitoso(mensaje){
-  const exitoso = document.createElement('P')
-  exitoso.textContent = mensaje;
-  exitoso.classList.add('exitoso');
-
-  formulario.appendChild(exitoso);
-
-  setTimeout(() =>{
-    exitoso.remove();
-  }, 5000);
-};
-
-
-
-
-*/
+//function login(){
+//  var documento, contraseña;
+//
+//  documento = document.getElementById('documento').value;
+//  contraseña = document.getElementById('password').value;
+//
+//  if( documento === '' && contraseña === '' ){
+//      alert('Error ingresa los datos solicitados')
+//  };
+//  if( documento.length === 0){
+//      alert('Por favor escriba un numero de documento')
+//  };
+//  if( contraseña.length < 6){
+//      alert('Error escriba una contraseña mayor a 6 caracteres')
+//
+//  };
+////  if( documento === '9958113' && contraseña === '123456' ){
+////    window.location= 'menuprinusuarios.html';
+////
+////}
+//
+//}
+//
+//
+//
+///*function mostrarExitoso(mensaje){
+//  const exitoso = document.createElement('P')
+//  exitoso.textContent = mensaje;
+//  exitoso.classList.add('exitoso');
+//
+//  formulario.appendChild(exitoso);
+//
+//  setTimeout(() =>{
+//    exitoso.remove();
+//  }, 5000);
+//};
+//
+//
+//
+//
+//*/
 

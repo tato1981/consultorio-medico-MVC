@@ -13,7 +13,7 @@ public class Conexion {
          
          String URL,USER,PASS;
          
-         URL = "jdbc:mysql://localhost/consultorio_MedicoMVC1?serverTimezone=UTC&autoReconnect=true&useSSL=false";
+         URL = "jdbc:mysql://localhost/consultorio_medicomvc1?serverTimezone=UTC&autoReconnect=true&useSSL=false";
          USER ="root";
          PASS ="123456";
          

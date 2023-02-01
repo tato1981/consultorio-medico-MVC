@@ -43,12 +43,13 @@
     <body>
       <div class="container">
        <h1 class="form-title">Inicio sesion usuarios</h1>
+       
        <form class="user-form"  action="validarUsuario" >
          <div class="main-user-info">
            <div class="user-input-box ">
-             <label class="document">Email</label>
+             <label class="email">Email</label>
              <input type="email"
-                    id="document"
+                    id="email"
                     name="email"
                     placeholder="E-mail">
                     
@@ -112,7 +113,7 @@
     <p><strong> &copy:2022 Slogan Soluciones Informaticas Duberney Obando Cano </strong>  </p>
  </footer>
 </div> 
-   <script src="JS/isesion_usuario.js" type="text/javascript"></script>
+   <!--<script src="JS/isesion_usuario.js" type="text/javascript"></script>-->
 </body>
 </html>
 

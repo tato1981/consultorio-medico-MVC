@@ -26,7 +26,7 @@
                 <a href="validacion_pacientes_nuevos.jsp">REGISTRO PACIENTES</a>
                 <a href="citas_pacientes.jsp">AGENDAR CITA</a>
                 <a href="#">ESTADO CITA</a>
-                <a href="#">MEDIO DE PAGO</a>
+                <a href="pagos.jsp">MEDIO DE PAGO</a>
                 <a href="consultarCita.jsp">CITAS PROGRAMADAS</a>
                 <a href="#">MODULO PACIENTES</a>
                 <a href="#">AYUDA</a><br>

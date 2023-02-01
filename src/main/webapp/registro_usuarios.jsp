@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Registro Usuarios</title>
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
-        <link href="CSS/registro_usuarios.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/registro_usuarios.css" rel="stylesheet" type="text/css"/>      
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     </head>
     <body >
@@ -37,7 +37,7 @@
 
         <div class="container">
             <h1 class="form-title"> Registro Usuarios</h1>
-            <form  method="post" name="registrarUsuario" action="guardarUsuario" >
+            <form id="formulario" method="post" name="registrarUsuario" action="guardarUsuario" >
                 <div class="main-user-info">
                     <div class="user-input-box">
                         <label class="nombres">Nombres</label>
@@ -108,6 +108,6 @@
                 <p><strong> &copy:2022 Slogan Soluciones Informaticas Duberney Obando Cano </strong>  </p>
             </footer>
         </div>
-        <!--script src="JS/registrousuarios.js" type="text/javascript"></script>-->
+          <!--<script src="JS/registrousuarios.js" type="text/javascript"></script>-->
     </body>       
 </html>

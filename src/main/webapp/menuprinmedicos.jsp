@@ -24,7 +24,7 @@
             <div id="sideNavigation" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <h2>MENU</h2>
-                <a href="agenda_citas.html">AGENDA</a>
+                <a href="consultarCita.jsp">AGENDA</a>
                 <a href="#">HISTORIO CLINICA</a>
                 <a href="#">FORMULAS MEDICAS</a>
                 <a href="#">INCAPACIDADES</a>
