@@ -9,8 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -56,7 +55,7 @@ public class validarUsuario extends HttpServlet {
                //request.getSession().setAttribute("d_identidad", d_identidad);
                request.getSession().setAttribute("email", email); 
                request.getSession().setAttribute("contrasena", contrasena);
-               //request.getSession().setAttribute("confirmar_contrasena", confirmar_contrasena); 
+               //request.getSession().setAttribute("confirmar_contrasena", confirmar_contrasena);               
                request.getRequestDispatcher("menuprinusuarios.jsp").forward(request, response);
                
               

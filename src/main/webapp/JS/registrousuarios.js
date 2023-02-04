@@ -29,26 +29,21 @@ confirmar_contrasena.addEventListener('input', leerTexto);
 
 // evento submit
 
-formulario.addEventListener('submit', function(e){
-  e.preventDefault();
-  
+formulario.addEventListener('submit', function(evento){
+  console.log(evento);
+  evento.preventDefault();
 
   const{nombres, apellidos, documento, email, contrasena, confirmar_contrasena} = datos;
 
 if(nombres === '' || apellidos ==='' || documento === '' || email ==='' || contrasena === ''|| confirmar_contrasena ===''){
       mostrarError('Todos los campos son abligatorios'); 
-   // return;
-   
+    return;
 
-   }if(contrasena !== confirmar_contrasena ){
-        //mostrarMensaje('Las contraseñas son diferentes');
-        mostrarError('Las contraseñas son diferentes');
-   } else{
-       mostrarMensaje('Registro enviado correctamente');
-   }     
+   }else{       
     
-    //mostrarMensaje('Registro enviado correctamente');
-});
+    mostrarMensaje('Registro enviado correctamente');
+    window.location= 'isesion_usuarios.jsp'
+ }});
 
 function leerTexto(e){
   datos[e.target.id] = e.target.value;

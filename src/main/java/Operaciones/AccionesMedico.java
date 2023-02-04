@@ -4,6 +4,7 @@
  */
 package Operaciones;
 
+
 import Modelo.Medico;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -54,7 +55,7 @@ public class AccionesMedico {
             ps.setString(7, med.getConfirmar_contrasena());
             
             estatus = ps.executeUpdate();
-            System.out.print("Registro Exitoso de Usuario");
+            System.out.print("Registro Exitoso del medico");
             con.close();            
               
           }catch(Exception e){
