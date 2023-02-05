@@ -47,7 +47,14 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.32</version>
             <scope>compile</scope>
-        </dependency>   
+        </dependency> 
+        
+          <dependency>
+            <groupId>com.dorkbox</groupId>
+            <artifactId>Notify</artifactId>
+            <version>3.7</version>
+          </dependency>
+  
         
     </dependencies>
     

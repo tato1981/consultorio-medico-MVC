@@ -59,7 +59,7 @@
           <div class="user-input-box ">
            <label class="password">Contraseña</label>
            <input type="password"
-                  id="password"
+                  id="contrasena"
                   name="contrasena"
                   placeholder="Contraseña">                
         </div>
@@ -98,6 +98,7 @@
    
           <div class="form-submit-btn">
             <input id="btn-iniciar" onclick="login();"  type="submit" name="accion"   value="Iniciar" >
+            
           </div> 
 
        </div>
@@ -113,7 +114,7 @@
     <p><strong> &copy:2022 Slogan Soluciones Informaticas Duberney Obando Cano </strong>  </p>
  </footer>
 </div> 
-   <!--<script src="JS/isesion_usuario.js" type="text/javascript"></script>-->
+   <script src="JS/isesionusuarios.js" type="text/javascript"></script>
 </body>
 </html>
 

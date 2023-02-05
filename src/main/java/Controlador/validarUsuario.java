@@ -3,12 +3,14 @@
 package Controlador;
 
 import Modelo.Usuario;
+import Operaciones.VentanasEmergentes;
 import Operaciones.validacionesUsuario;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -16,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author duber
  */
 public class validarUsuario extends HttpServlet {
-    
+        VentanasEmergentes ventana = new VentanasEmergentes();
         validacionesUsuario acc=new validacionesUsuario();
         Usuario usr=new Usuario();
         int r;
@@ -57,6 +59,8 @@ public class validarUsuario extends HttpServlet {
                request.getSession().setAttribute("contrasena", contrasena);
                //request.getSession().setAttribute("confirmar_contrasena", confirmar_contrasena);               
                request.getRequestDispatcher("menuprinusuarios.jsp").forward(request, response);
+               //System.out.println("Inicio sesion exitosamente");
+               JOptionPane.showMessageDialog(null, "Inicio sesion exitosamente");
                
               
                
